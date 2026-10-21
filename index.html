@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0E0E0E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Shoe Log">
+  <meta name="description" content="Sickboiss Shoe Log: log every pair, every wear, every clean.">
+  <title>Sickboiss Shoe Log</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="anton.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Each screen is rendered into #view by app.js -->
+  <main id="view" class="view" aria-live="polite"><p class="muted pad">Loading your rack…</p></main>
+
+  <!-- Bottom tab bar -->
+  <nav class="tabbar" aria-label="Main">
+    <a class="tab" data-tab="home" href="#/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9h-6v-6H9v6H3z"/></svg><span>Home</span></a>
+    <a class="tab" data-tab="collection" href="#/collection"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 16c3 0 5-1 7-4l2 1c2 1 6 2 9 2 1 0 2 1 2 2v1H2z"/><path d="M2 19h20"/></svg><span>Rack</span></a>
+    <a class="tab add" data-tab="add" href="#/add" aria-label="Add a pair"><span class="plus">+</span></a>
+    <a class="tab" data-tab="report" href="#/report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7"/></svg><span>Report</span></a>
+    <a class="tab" data-tab="more" href="#/more"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>More</span></a>
+  </nav>
+
+  <!-- Bottom sheet for quick actions -->
+  <div id="sheet" class="sheet" hidden><div id="sheet-body" class="sheet-body" role="dialog" aria-modal="true"></div></div>
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="jspdf.umd.min.js"></script>
+  <script src="db.js"></script>
+  <script src="stats.js"></script>
+  <script src="exports.js"></script>
+  <script src="demo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
